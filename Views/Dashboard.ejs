@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <% allUserGameData.forEach(userGameData => { %>
+      <div class="row">
+        <div style="font-size: large; font-weight: bold">
+          <%= userGameData.userName + " " %>
+        </div>
+        <div class="col-3">
+          <span>BirthDate</span>
+        </div>
+        <div class="col-1">:</div>
+        <div class="col-6"><%= userGameData.UserGameBiodata.birthDate %></div>
+
+        <div class="col-3">
+          <span>Country</span>
+        </div>
+        <div class="col-1">:</div>
+        <div class="col-6"><%= userGameData.UserGameBiodata.country %></div>
+        <a href="/HistoryGameForm/<%= userGameData.id %> ">
+          Add Game History
+        </a>
+      </div>
+      <div>
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" class="table-primary">No.</th>
+              <th scope="col" class="table-primary">Score</th>
+              <th scope="col" class="table-primary">Achieved On</th>
+              <th scope="col" class="table-primary">Edit</th>
+              <th scope="col" class="table-primary">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% userGameData.UserGameHistories.forEach((userHistory, index) =>
+            {%>
+            <tr>
+              <th scope="row"><%= index+1%></th>
+              <td><%= userHistory.score %></td>
+              <td><%= userHistory.achieved_on %></td>
+              <td>
+                <a href="/HistoryGameForm/edit/<%= userHistory.id %>">Edit</a>
+              </td>
+              <td>
+                <a href="/HistoryGameForm/delete/<%= userHistory.id %>"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <br />
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

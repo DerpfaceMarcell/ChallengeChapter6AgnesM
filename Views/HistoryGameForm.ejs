@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/HistoryGameForm/modify" method="POST">
+        <!-- Jangan lupa kasih name -->
+        <input
+          type="hidden"
+          name="id"
+          class="form-control"
+          placeholder="id"
+          value="<%=  user.id%>"
+        />
+        <input
+          type="hidden"
+          name="historyid"
+          class="form-control"
+          placeholder="id"
+          value="<%= history.id %> "
+        />
+        <div class="row">
+          <div class="col-4">Username</div>
+          <div class="col-1">:</div>
+          <div class="col-4"><%= user.userName %></div>
+        </div>
+        <label for="score" class="form-label">Score</label>
+        <!-- Jangan lupa kasih name -->
+        <input
+          type="text"
+          name="score"
+          class="form-control"
+          placeholder="Score"
+          value="<%= history.score %> "
+        />
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

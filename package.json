@@ -1,0 +1,37 @@
+{
+  "name": "challengechap6agnesm",
+  "version": "1.0.0",
+  "description": "Bikin PR Chapter 6",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "db:create": "npx sequelize-cli db:create",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "model-gen:user_game": "npx sequelize-cli model:generate --name UserGames --attributes userName:string,password:string",
+    "model-gen:user_game_biodata": "npx sequelize-cli model:generate --name UserGameBiodatas --attributes birthDate:date,gender:string,country:string",
+    "model-gen:user_game_history": "npx sequelize-cli model:generate --name UserGameHistories --attributes score:integer,achieved_on:date",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate-down": "npx sequelize-cli db:migrate:undo",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed-gen:user_game": "npx sequelize-cli seed:generate --name userGames",
+    "seed-gen:user_game_biodata": "npx sequelize-cli seed:generate --name userGameBiodatas",
+    "seed-gen:user_game_history": "npx sequelize-cli seed:generate --name userGameHistories"
+  },
+  "keywords": [
+    "chapter6"
+  ],
+  "author": "AgnesM",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
+  }
+}

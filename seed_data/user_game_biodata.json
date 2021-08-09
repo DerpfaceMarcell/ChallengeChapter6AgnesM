@@ -1,0 +1,22 @@
+[
+  {
+    "birthDate": "1990-01-01",
+    "gender": "female",
+    "country": "canada"
+  },
+  {
+    "birthDate": "2012-04-07",
+    "gender": "male",
+    "country": "germany"
+  },
+  {
+    "birthDate": "1997-04-17",
+    "gender": "male",
+    "country": "indonesia"
+  },
+  {
+    "birthDate": "1996-04-17",
+    "gender": "female",
+    "country": "indonesia"
+  }
+]
